@@ -14,7 +14,7 @@ time.sleep(2)
 
 SCHOOL_NO: int = 92733  # Write your own school code here
 
-initial_point: int = 25656525  # Set the value from which number you want to start finding result
+initial_point: int = 25656448  # Set the value from which number you want to start finding result
 data: int = 1  # This variable is for distinguish between results's screenshot name
 mothers_first_letter: str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 students_first_letter: str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -36,14 +36,14 @@ while True:
             result_table = driver.find_elements(By.XPATH, "/html/body/div/div/center/table")
             if result_table:
                 driver.save_screenshot(f"class12_results/result_{data}.png")  # capture the screenshot and put inside 'class12_results' folder
-                print(f"Roll no:'{initial_point}'.................................. Found ✅")
+                print(f"{admit_card_id} '{initial_point}'.................................. Found ✅")
                 driver.get('https://testservices.nic.in/cbseresults/class_xii_2023/ClassTwelfth_c_2023.htm')
                 time.sleep(2)
                 data += 1
                 found = True
                 break
             else:
-                print(f"Roll no:'{initial_point}'      -> Not Found")
+                print(f"{admit_card_id} '{initial_point}' -> Not Found")
                 driver.get('https://testservices.nic.in/cbseresults/class_xii_2023/ClassTwelfth_c_2023.htm')
                 time.sleep(2)
         if found:
